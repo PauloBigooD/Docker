@@ -1,7 +1,7 @@
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/320px-Docker_%28container_engine%29_logo.svg.png)
 
 ------------------------------
-### Install Docker Engine on Ubuntu :whale:
+### Install Docker Engine on Ubuntu
 
 **OS requirements🔗**
 
@@ -13,7 +13,7 @@
     * Ubuntu Focal 20.04 (LTS)
     * Ubuntu Bionic 18.04 (LTS)
  
->Docker Engine is compatible with x86_64 (or amd64), armhf, arm64, and s390x architectures.
++ Docker Engine is compatible with `x86_64` (or `amd64`), `armhf`, `arm64`, and `s390x` architectures.
 
 #### Uninstall old versions
 
@@ -73,12 +73,29 @@ Before you install Docker Engine for the first time on a new host machine, you n
 
 ### Install Docker-compose
 
-     curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose 
-     chmod +x /usr/local/bin/docker-compose                                                                                                  
+- [ ] **1. Installing docker-compose**
 
-- [ ] **1. Check the version of the Docker-Compose**
+      curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose 
+      chmod +x /usr/local/bin/docker-compose                                                                                                  
 
-      docker-compose version 
+   - **Check the version of the Docker-Compose**
+
+         docker-compose version 
+
+- [ ] **2. Installing docker-compose using python-pip**
+
+   - **Install python-pip**
+   
+         sudo apt update
+         sudo apt install python3-pip
+         
+   - When the installation is complete, verify the installation by checking the pip version:
+      
+         pip3 --version
+    
+   - **Install docker-compose**
+
+         sudo pip install docker-compose   
 
 --------
 
@@ -134,7 +151,25 @@ Before you install Docker Engine for the first time on a new host machine, you n
 
 -> **Reiniciar um ou mais conteiners**
 
-    docker restart [OPTIONS] CONTAINER [CONTAINER...]
+    docker restart [OPTIONS] CONTAINER [CONTAINER...]Detetar idioma
+￼
+Inglês
+￼
+Português
+￼
+Francês
+￼
+￼swap_horiz
+￼
+Português
+￼
+Inglês
+￼
+Francês
+￼
+Texto de partida
+￼
+Role
 
 -- Options:
 
@@ -156,7 +191,7 @@ Before you install Docker Engine for the first time on a new host machine, you n
 
 ----
 
--> **Listar imagens dos containers**
+-> **Listar images dos containers**
 
     docker images [OPTIONS] [REPOSITORY[:TAG]]
 
@@ -176,6 +211,19 @@ Before you install Docker Engine for the first time on a new host machine, you n
 
 ---- 
 
+-> **Remover uma ou mais images**
+
+    docker rmi [OPTIONS] IMAGE [IMAGE...]
+
+-- Options:
+
+`-f, --force`     -> Force the removal a image
+
+`--no-prune`      -> Do not delete untagged parents
+
+
+----
+
 -> **Verificar uso do container**
     
     docker stats [OPTIONS] [CONTAINER...]
@@ -189,6 +237,28 @@ Before you install Docker Engine for the first time on a new host machine, you n
 `--no-stream`       -> Disable streaming stats and only pull the first result
 
 `--no-trunc`        -> Do not truncate output
+
+----
+
+-> **Verificar logs do container**
+    
+    docker logs [OPTIONS] CONTAINER
+
+-- Options:
+
+`--details`              -> Show extra details provided to logs
+      
+`-f, --follow`           -> Follow log output
+
+`--since string`     -> Show logs since timestamp (e.g. "2013-01-02T13:23:37Z") or
+                       relative (e.g. "42m" for 42 minutes)
+
+`-n, --tail string`      -> Number of lines to show from the end of the logs (default "all")
+
+`-t, --timestamps`       -> Show timestamps
+
+`--until string`     -> Show logs before a timestamp (e.g. "2013-01-02T13:23:37Z") or
+                       relative (e.g. "42m" for 42 minutes
 
 ----
 
@@ -283,8 +353,6 @@ Before you install Docker Engine for the first time on a new host machine, you n
 
 ----
 
--> **Clusterização das aplicações em uma orquestração de várias containers**
+> Fonte : [![Docker](https://img.shields.io/badge/Docker-2496ED?style=plastic&logo=docker&logoColor=white)](https://docs.docker.com/engine/reference/commandline/docker/)
 
-----
 
-Fonte : https://docs.docker.com/engine/reference/commandline/docker/
